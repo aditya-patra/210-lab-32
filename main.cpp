@@ -21,7 +21,7 @@ int main() {
             carList[i].print();
         }
         cout << endl;
-        cout << "Time: " << t << " " << endl;
+        cout << "Time: " << t << " ";
         if ((int)(rand() % 100) >= 55) {
             cout << "Car Paid: ";
             carList[0].print();
@@ -30,9 +30,12 @@ int main() {
         }
         if ((int)(rand() % 100) >= 45) {
             temp = new Car();
+            cout << "Joined Lane: ";
+            temp->print();
+            cout << " ";
             carList.push_back(*temp);
         }
-        cout << "Queue: " << endl;
+        cout << endl << "Queue: " << endl;
         t++;
     }
 }
