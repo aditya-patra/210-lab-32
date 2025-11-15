@@ -26,7 +26,7 @@ int main() {
             cout << "Car Paid: ";
             carList[0].print();
             cout << " ";
-            carList.pop_back();
+            carList.pop_front();
         }
         if ((int)(rand() % 100) >= 45) {
             temp = new Car();
