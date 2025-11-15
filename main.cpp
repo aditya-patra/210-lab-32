@@ -24,7 +24,7 @@ int main() {
         // print current queue
         for(int e = 0; e < carList.size(); e++) {
             for (int i = 0; i < carList[0].size(); i++) {
-                carList[0][i].print();
+                carList[e][i].print();
             }
             cout << endl;
         }
