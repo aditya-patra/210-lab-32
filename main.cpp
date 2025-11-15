@@ -15,14 +15,18 @@ int main() {
             temp = new Car();
             carList[i].push_back(*temp);
         }
+        carList[i][0].print();
     }
     // simulation
     cout << "Initial Queue: " << endl;
     int t = 1;
     while (carList[0].size() != 0) {
         // print current queue
-        for (int i = 0; i < carList.size(); i++) {
-            carList[0][i].print();
+        for(int e = 0; e < carList.size(); e++) {
+            for (int i = 0; i < carList[0].size(); i++) {
+                carList[0][i].print();
+            }
+            cout << endl;
         }
         cout << endl;
         // print time/iteration
