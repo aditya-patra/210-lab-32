@@ -15,11 +15,15 @@ int main() {
     }
     // simulation
     while (carList.size() != 0) {
-        for (int i = 0; i < 2; i++) {
+        for (int i = 0; i < carList.size(); i++) {
             carList[i].print();
         }
         if ((int)(rand() % 100) >= 55) {
             carList.pop_back();
+        }
+        if ((int)(rand() % 100) >= 45) {
+            temp = new Car();
+            carList.push_back(*temp);
         }
     }
 }
