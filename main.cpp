@@ -9,7 +9,7 @@ int main() {
     deque<Car> carList;
     Car* temp;
     // add 2 Car objects to car line to start
-    for (int i = 0; i < START_SIZE;i++) {
+    for (int i = 0; i < START_SIZE; i++) {
         temp = new Car();
         carList.push_back(*temp);
     }
