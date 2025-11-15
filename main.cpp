@@ -43,4 +43,5 @@ int main() {
         cout << endl << "Queue: " << endl;
         t++;
     }
+    cout << "Empty";
 }
