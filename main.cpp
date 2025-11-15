@@ -40,11 +40,12 @@ int main() {
             cout << "Joined Lane: ";
             temp->print();
             cout << " ";
-            carList.[0]push_back(*temp);
+            carList[0].push_back(*temp);
         }
         // print header for current queue
         cout << endl << "Queue: " << endl;
         t++;
+        break;
     }
     cout << "Empty";
 }
