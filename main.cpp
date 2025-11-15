@@ -1,12 +1,13 @@
 #include "Car.h"
 #include <deque>
+#include <array>
 
 using namespace std;
 
 const int START_SIZE = 2;
 
 int main() {
-    deque<Car> carList;
+    array<deque<Car>> carList;
     Car* temp;
     // add 2 Car objects to car line to start
     for (int i = 0; i < START_SIZE; i++) {
