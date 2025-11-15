@@ -15,12 +15,17 @@ int main() {
     }
     // simulation
     cout << "Initial Queue: " << endl;
+    int t = 1;
     while (carList.size() != 0) {
         for (int i = 0; i < carList.size(); i++) {
             carList[i].print();
         }
         cout << endl;
+        cout << "Time: " << t << " " << endl;
         if ((int)(rand() % 100) >= 55) {
+            cout << "Car Paid: ";
+            carList[0].print();
+            cout << " ";
             carList.pop_back();
         }
         if ((int)(rand() % 100) >= 45) {
@@ -28,5 +33,6 @@ int main() {
             carList.push_back(*temp);
         }
         cout << "Queue: " << endl;
+        t++;
     }
 }
