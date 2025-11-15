@@ -11,7 +11,7 @@ int main() {
     Car* temp;
     // add 2 Car objects to car line to start
     for(int i = 0; i < carList.size(); i++) {
-        for (int i = 0; i < START_SIZE; i++) {
+        for (int e = 0; e < START_SIZE; e++) {
             temp = new Car();
             carList[i].push_back(*temp);
         }
