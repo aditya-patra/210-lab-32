@@ -17,17 +17,21 @@ int main() {
     cout << "Initial Queue: " << endl;
     int t = 1;
     while (carList.size() != 0) {
+        // print current queue
         for (int i = 0; i < carList.size(); i++) {
             carList[i].print();
         }
         cout << endl;
+        // print time/iteration
         cout << "Time: " << t << " ";
+        // check if car pays
         if ((int)(rand() % 100) >= 55) {
             cout << "Car Paid: ";
             carList[0].print();
             cout << " ";
             carList.pop_front();
         }
+        // check if car joins lane
         if ((int)(rand() % 100) >= 45) {
             temp = new Car();
             cout << "Joined Lane: ";
@@ -35,6 +39,7 @@ int main() {
             cout << " ";
             carList.push_back(*temp);
         }
+        // print header for current queue
         cout << endl << "Queue: " << endl;
         t++;
     }
