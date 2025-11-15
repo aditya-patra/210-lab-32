@@ -10,9 +10,11 @@ int main() {
     array<deque<Car>> carList;
     Car* temp;
     // add 2 Car objects to car line to start
-    for (int i = 0; i < START_SIZE; i++) {
-        temp = new Car();
-        carList.push_back(*temp);
+    for(int i = 0; i < carList.size(); i++) {
+        for (int i = 0; i < START_SIZE; i++) {
+            temp = new Car();
+            carList[i].push_back(*temp);
+        }
     }
     // simulation
     cout << "Initial Queue: " << endl;
