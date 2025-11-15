@@ -13,7 +13,10 @@ int main() {
         temp = new Car();
         carList.push_back(*temp);
     }
-    for(int i = 0; i < 2; i++) {
-        carList[i].print();
+    // simulation
+    while(carList.size() != 0) {
+        for(int i = 0; i < 2; i++) {
+            carList[i].print();
+        }
     }
 }
