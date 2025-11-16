@@ -5,6 +5,7 @@
 using namespace std;
 
 const int START_SIZE = 2;
+const int F_CAR_JOIN = 36, F_CAR_LEAVE = 39, F_CAR_CHANGE = 15;
 
 int main() {
     array<deque<Car>, 4> carList;
@@ -30,45 +31,43 @@ int main() {
         for(int g = 0; g < carList.size(); g++) {
             // check if car pays
             cout << "Lane: " << g+1;
-            int rnd = (int)(rand() % 100);
-            // if no cars exist in current lane, car must be added as neither of the other 2 operation can function
-            if (carList[g].size() == 0 && rnd < 46) {
-                rnd = 60;
-            }
-            if (rnd < 46) {
-                if (carList[g].size() > 0) {
-                    cout << " Car Paid: ";
-                    carList[g][0].print();
-                    cout << " ";
-                    carList[g].pop_front();
-                }
-            }
-            // check if car joins lane
-            else if (rnd < (46+39)) {
-                temp = new Car();
-                cout << " Joined Lane: ";
-                temp->print();
-                carList[g].push_back(*temp);
-            }
-            else {
-                temp = &carList[g].back();
-                int small_index = 0;
-                int small_val = carList[0].size();
-                for(int f = 0; f < carList.size(); f++) {
-                    if (carList[f].size() < small_val) {
-                        small_index = f;
+            if (carList[g].size() != 0) {
+                int rnd = (int)(rand() % 100);
+                if (rnd < 46) {
+                    if (carList[g].size() > 0) {
+                        cout << " Car Paid: ";
+                        carList[g][0].print();
+                        cout << " ";
+                        carList[g].pop_front();
                     }
                 }
-                if (small_index == g) {
-                    if (small_index == 3) {
-                        small_index = 0;
-                    }
-                    small_index += 1;
+                // check if car joins lane
+                else if (rnd < (46+39)) {
+                    temp = new Car();
+                    cout << " Joined Lane: ";
+                    temp->print();
+                    carList[g].push_back(*temp);
                 }
-                carList[g].pop_back();
-                carList[small_index].push_back(*temp);
-                cout << " Switched: ";
-                temp->print();
+                else {
+                    temp = &carList[g].back();
+                    int small_index = 0;
+                    int small_val = carList[0].size();
+                    for(int f = 0; f < carList.size(); f++) {
+                        if (carList[f].size() < small_val) {
+                            small_index = f;
+                        }
+                    }
+                    if (small_index == g) {
+                        if (small_index == 3) {
+                            small_index = 0;
+                        }
+                        small_index += 1;
+                    }
+                    carList[g].pop_back();
+                    carList[small_index].push_back(*temp);
+                    cout << " Switched: ";
+                    temp->print();
+                }
             }
         }
         // print current queue
