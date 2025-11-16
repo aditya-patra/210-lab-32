@@ -19,6 +19,13 @@ int main() {
     }
     // simulation
     cout << "Initial Queue: " << endl;
+    for(int e = 0; e < carList.size(); e++) {
+        for (int i = 0; i < carList[0].size(); i++) {
+            carList[e][i].print();
+        }
+        cout << endl;
+    }
+    /*
     int t = 1;
     while (carList[0].size() != 0) {
         // print current queue
@@ -52,4 +59,5 @@ int main() {
         break;
     }
     cout << "Empty";
+    */
 }
