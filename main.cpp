@@ -100,6 +100,7 @@ int main() {
                 cout << endl;
             }
             for (int i = 0; i < carList[e].size(); i++) {
+                cout << "     ";
                 carList[e][i].print();
             }
         }
