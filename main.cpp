@@ -34,6 +34,7 @@ int main() {
             int rnd = (int)(rand() % 100);
             while (carList[g].size() == 0 && rnd < 46) {
                 rnd = (int)(rand() % 100);
+                cout << rnd << endl;
             }
             if (rnd < 46) {
                 if (carList[g].size() > 0) {
@@ -70,7 +71,7 @@ int main() {
         cout << endl << "Queue: " << endl;
         // print current queue
         for(int e = 0; e < carList.size(); e++) {
-            cout << "Lane " << e << ":" << endl;
+            cout << "Lane " << e << ": ";
             for (int i = 0; i < carList[e].size(); i++) {
                 carList[e][i].print();
             }
