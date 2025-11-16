@@ -21,7 +21,7 @@ int main() {
     cout << "Initial Queue: " << endl;
     for(int e = 0; e < carList.size(); e++) {
         cout << "Lane " << e << ":" << endl;
-        for (int i = 0; i < carList[g].size(); i++) {
+        for (int i = 0; i < carList[e].size(); i++) {
             carList[e][i].print();
         }
     }
@@ -52,13 +52,12 @@ int main() {
         // print current queue
         for(int e = 0; e < carList.size(); e++) {
             cout << "Lane " << e << ":" << endl;
-            for (int i = 0; i < carList[g].size(); i++) {
+            for (int i = 0; i < carList[e].size(); i++) {
                 carList[e][i].print();
             }
         }
         cout << endl;
         t++;
-        break;
     }
     cout << "Empty";
 }
