@@ -31,10 +31,12 @@ int main() {
         for(int g = 0; g < carList.size(); g++) {
             // check if car pays
             if ((int)(rand() % 100) >= 50) {
-                cout << "Car Paid: ";
-                carList[g][0].print();
-                cout << " ";
-                carList[g].pop_front();
+                if (carList[g].size() > 0) {
+                    cout << "Car Paid: ";
+                    carList[g][0].print();
+                    cout << " ";
+                    carList[g].pop_front();
+                }
             }
             // check if car joins lane
             if ((int)(rand() % 100) >= 50) {
@@ -50,10 +52,10 @@ int main() {
         cout << endl << "Queue: " << endl;
         // print current queue
         for(int e = 0; e < carList.size(); e++) {
+            cout << "Lane " << e << ":" << endl;
             for (int i = 0; i < carList[0].size(); i++) {
                 carList[e][i].print();
             }
-            cout << endl;
         }
         cout << endl;
         t++;
