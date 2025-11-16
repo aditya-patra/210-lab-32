@@ -52,6 +52,7 @@ int main() {
                 carList[g].push_back(*temp);
             }
             else {
+                cout << " b";
                 temp = &carList[g].back();
                 int small_index = 0;
                 int small_val = carList[0].size();
@@ -60,6 +61,7 @@ int main() {
                         small_index = f;
                     }
                 }
+                cout << " b";
                 carList[g].pop_back();
                 carList[small_index].push_back(*temp);
                 cout << " Switched Lane: ";
