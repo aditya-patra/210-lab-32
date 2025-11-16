@@ -6,6 +6,7 @@ using namespace std;
 
 const int START_SIZE = 2;
 const int F_CAR_JOIN = 36, F_CAR_LEAVE = 39, F_CAR_CHANGE = 15;
+const int E_CAR_JOIN = 50;
 
 int main() {
     array<deque<Car>, 4> carList;
@@ -67,6 +68,15 @@ int main() {
                     carList[small_index].push_back(*temp);
                     cout << " Switched: ";
                     temp->print();
+                }
+            }
+            else {
+                // check if car joins lane
+                if (rnd < (46+39)) {
+                    temp = new Car();
+                    cout << " Joined Lane: ";
+                    temp->print();
+                    carList[g].push_back(*temp);
                 }
             }
         }
