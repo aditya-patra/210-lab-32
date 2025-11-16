@@ -31,14 +31,14 @@ int main() {
         cout << "Time: " << t << " ";
         for(int g = 0; g < carList.size(); g++) {
             // check if car pays
-            if ((int)(rand() % 100) >= 55) {
+            if ((int)(rand() % 100) >= 50) {
                 cout << "Car Paid: ";
                 carList[g][0].print();
                 cout << " ";
                 carList[g].pop_front();
             }
             // check if car joins lane
-            if ((int)(rand() % 100) >= 45) {
+            if ((int)(rand() % 100) >= 50) {
                 temp = new Car();
                 cout << "Joined Lane: ";
                 temp->print();
