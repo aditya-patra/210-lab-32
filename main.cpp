@@ -20,6 +20,7 @@ int main() {
     // simulation
     cout << "Initial Queue: " << endl;
     for(int e = 0; e < carList.size(); e++) {
+        cout << "Lane " << e << ":" << endl;
         for (int i = 0; i < carList[0].size(); i++) {
             carList[e][i].print();
         }
