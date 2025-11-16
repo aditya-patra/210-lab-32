@@ -5,7 +5,7 @@
 using namespace std;
 
 const int START_SIZE = 2;
-const int F_CAR_JOIN = 36, F_CAR_LEAVE = 39, F_CAR_CHANGE = 15;
+const int F_CAR_JOIN = 39, F_CAR_LEAVE = 46, F_CAR_CHANGE = 15;
 const int E_CAR_JOIN = 50;
 
 int main() {
@@ -34,7 +34,7 @@ int main() {
             cout << "Lane: " << g+1;
             if (carList[g].size() != 0) {
                 int rnd = (int)(rand() % 100);
-                if (rnd < 46) {
+                if (rnd < F_CAR_LEAVE) {
                     if (carList[g].size() > 0) {
                         cout << " Car Paid: ";
                         carList[g][0].print();
@@ -43,7 +43,7 @@ int main() {
                     }
                 }
                 // check if car joins lane
-                else if (rnd < (46+39)) {
+                else if (rnd < (F_CAR_JOIN+F_CAR_LEAVE)) {
                     temp = new Car();
                     cout << " Joined Lane: ";
                     temp->print();
@@ -72,7 +72,8 @@ int main() {
             }
             else {
                 // check if car joins lane
-                if (rnd < (46+39)) {
+                int rnd = (int)(rand() % 100);
+                if (rnd < E_CAR_JOIN) {
                     temp = new Car();
                     cout << " Joined Lane: ";
                     temp->print();
