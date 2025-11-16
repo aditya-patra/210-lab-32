@@ -32,6 +32,9 @@ int main() {
             // check if car pays
             cout << "Lane: " << g+1;
             int rnd = (int)(rand() % 100);
+            while (carList[g].size() == 0 && rnd < 46) {
+                rnd = (int)(rand() % 100);
+            }
             if (rnd < 46) {
                 if (carList[g].size() > 0) {
                     cout << " Car Paid: ";
