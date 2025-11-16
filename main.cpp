@@ -27,9 +27,10 @@ int main() {
     }
     for (int t = 1; t <= 20; t++) {
         // print time/iteration
-        cout << "Time: " << t << " ";
+        cout << "Time: " << t << endl;
         for(int g = 0; g < carList.size(); g++) {
             // check if car pays
+            cout << "Lane: " << g << endl;
             if ((int)(rand() % 100) >= 50) {
                 if (carList[g].size() > 0) {
                     cout << "Car Paid: ";
