@@ -49,6 +49,15 @@ int main() {
             }
             else {
                 temp = &carList[g].back();
+                int small_index = 0;
+                int small_val = carList[0].size();
+                for(int f = 0; f < carList.size(); f++) {
+                    if (carList[f].size() < small_val) {
+                        small_index = f;
+                    }
+                }
+                carList[g].pop_back();
+                carList[small_index].push_back(*temp);
             }
         }
         // print header for current queue
