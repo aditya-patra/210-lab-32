@@ -25,8 +25,7 @@ int main() {
             carList[e][i].print();
         }
     }
-    int t = 1;
-    while (carList[0].size() != 0) {
+    for (int t = 1; t <= 20; t++) {
         // print time/iteration
         cout << "Time: " << t << " ";
         for(int g = 0; g < carList.size(); g++) {
