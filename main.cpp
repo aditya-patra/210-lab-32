@@ -44,7 +44,7 @@ int main() {
                 }
             }
             // check if car joins lane
-            if (rnd < (46+39)) {
+            else if (rnd < (46+39)) {
                 temp = new Car();
                 cout << " Joined Lane: ";
                 temp->print();
