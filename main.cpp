@@ -31,23 +31,24 @@ int main() {
         for(int g = 0; g < carList.size(); g++) {
             // check if car pays
             cout << "Lane: " << g+1;
-            int output1 = 0;
             int rnd = (int)(rand() % 100);
-            if (rnd >= 50) {
+            if (rnd < 46) {
                 if (carList[g].size() > 0) {
                     cout << " Car Paid: ";
                     carList[g][0].print();
                     cout << " ";
                     carList[g].pop_front();
-                    output1 = 1;
                 }
             }
             // check if car joins lane
-            if (output1 != 1) {
+            if (rnd < (46+39)) {
                 temp = new Car();
                 cout << " Joined Lane: ";
                 temp->print();
                 carList[g].push_back(*temp);
+            }
+            else {
+                temp = &carList[g].back();
             }
         }
         // print header for current queue
