@@ -28,12 +28,12 @@ int main() {
     for (int t = 1; t <= 20; t++) {
         // print time/iteration
         cout << "Time: " << t << endl;
-        for(int g = 0; g < carList.size(); g++) {
+        for(int g = 0; g < carList.size();g++) {
             // check if car pays
-            cout << "Lane: " << g << " ";
+            cout << "Lane: " << g;
             if ((int)(rand() % 100) >= 50) {
                 if (carList[g].size() > 0) {
-                    cout << "Car Paid: ";
+                    cout << " Car Paid: ";
                     carList[g][0].print();
                     cout << " ";
                     carList[g].pop_front();
@@ -42,7 +42,7 @@ int main() {
             // check if car joins lane
             else {
                 temp = new Car();
-                cout << "Joined Lane: ";
+                cout << " Joined Lane: ";
                 temp->print();
                 cout << " ";
                 carList[g].push_back(*temp);
