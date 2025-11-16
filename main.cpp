@@ -30,7 +30,7 @@ int main() {
         cout << "Time: " << t << endl;
         for(int g = 0; g < carList.size(); g++) {
             // check if car pays
-            cout << "Lane: " << g << endl;
+            cout << "Lane: " << g << " ";
             if ((int)(rand() % 100) >= 50) {
                 if (carList[g].size() > 0) {
                     cout << "Car Paid: ";
@@ -40,7 +40,7 @@ int main() {
                 }
             }
             // check if car joins lane
-            if ((int)(rand() % 100) >= 50) {
+            else {
                 temp = new Car();
                 cout << "Joined Lane: ";
                 temp->print();
@@ -55,6 +55,9 @@ int main() {
             cout << "Lane " << e << ":" << endl;
             for (int i = 0; i < carList[e].size(); i++) {
                 carList[e][i].print();
+            }
+            if (carList.size() == 0) {
+                cout << endl;
             }
         }
         cout << endl;
