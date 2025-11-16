@@ -24,19 +24,9 @@ int main() {
         for (int i = 0; i < carList[0].size(); i++) {
             carList[e][i].print();
         }
-        cout << endl;
     }
-    /*
     int t = 1;
     while (carList[0].size() != 0) {
-        // print current queue
-        for(int e = 0; e < carList.size(); e++) {
-            for (int i = 0; i < carList[0].size(); i++) {
-                carList[e][i].print();
-            }
-            cout << endl;
-        }
-        cout << endl;
         // print time/iteration
         cout << "Time: " << t << " ";
         // check if car pays
@@ -56,9 +46,16 @@ int main() {
         }
         // print header for current queue
         cout << endl << "Queue: " << endl;
+        // print current queue
+        for(int e = 0; e < carList.size(); e++) {
+            for (int i = 0; i < carList[0].size(); i++) {
+                carList[e][i].print();
+            }
+            cout << endl;
+        }
+        cout << endl;
         t++;
         break;
     }
     cout << "Empty";
-    */
 }
