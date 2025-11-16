@@ -33,9 +33,9 @@ int main() {
             // check if car pays
             if ((int)(rand() % 100) >= 55) {
                 cout << "Car Paid: ";
-                carList[0][0].print();
+                carList[g][0].print();
                 cout << " ";
-                carList[0].pop_front();
+                carList[g].pop_front();
             }
             // check if car joins lane
             if ((int)(rand() % 100) >= 45) {
@@ -43,7 +43,7 @@ int main() {
                 cout << "Joined Lane: ";
                 temp->print();
                 cout << " ";
-                carList[0].push_back(*temp);
+                carList[g].push_back(*temp);
             }
             // print header for current queue
             cout << endl << "Queue: " << endl;
