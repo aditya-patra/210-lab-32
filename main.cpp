@@ -32,9 +32,9 @@ int main() {
             // check if car pays
             cout << "Lane: " << g+1;
             int rnd = (int)(rand() % 100);
-            while (carList[g].size() == 0 && rnd < 46) {
-                rnd = (int)(rand() % 100);
-                cout << rnd << endl;
+            // if no cars exist in current lane, car must be added as neither of the other 2 operation can function
+            if (carList[g].size() == 0 && rnd < 46) {
+                rnd = 60;
             }
             if (rnd < 46) {
                 if (carList[g].size() > 0) {
