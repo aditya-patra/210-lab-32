@@ -28,14 +28,17 @@ int main() {
             carList[e][i].print();
         }
     }
+    // iterate through each time value (1 to 20)
     for (int t = 1; t <= 20; t++) {
         // print time/iteration
         cout << endl << "Time: " << t << endl;
+        // iterate through each lane
         for(int g = 0; g < carList.size(); g++) {
-            // check if car pays
             cout << "Lane: " << g+1;
+            // check if current lane has at least 1 car
             if (carList[g].size() != 0) {
                 int rnd = (int)(rand() % 100);
+                // 46% chance of car paying
                 if (rnd < F_CAR_LEAVE) {
                     if (carList[g].size() > 0) {
                         cout << " Car Paid: ";
@@ -43,15 +46,17 @@ int main() {
                         carList[g].pop_front();
                     }
                 }
-                // check if car joins lane
+                // 39% chance of car joining
                 else if (rnd < (F_CAR_JOIN+F_CAR_LEAVE)) {
                     temp = new Car();
                     cout << " Joined Lane: ";
                     temp->print();
                     carList[g].push_back(*temp);
                 }
+                // 15% chance of car switching lanes
                 else {
                     *temp = carList[g].back();
+                    // switch to lane with fewest cars
                     int small_index = 0;
                     int small_val = carList[0].size();
                     for(int f = 0; f < carList.size(); f++) {
@@ -59,20 +64,22 @@ int main() {
                             small_index = f;
                         }
                     }
+                    // if current lane has fewest cars, switch to next lane
                     if (small_index == g) {
                         if (small_index == 3) {
                             small_index = 0;
                         }
                         small_index += 1;
                     }
+                    // switch lanes
                     carList[g].pop_back();
                     carList[small_index].push_back(*temp);
                     cout << " Switched: ";
                     temp->print();
                 }
             }
+            // 50% change of car joining lane if lane is empty
             else {
-                // check if car joins lane
                 int rnd = (int)(rand() % 100);
                 if (rnd < E_CAR_JOIN) {
                     temp = new Car();
