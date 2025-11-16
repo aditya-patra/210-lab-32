@@ -5,7 +5,9 @@
 using namespace std;
 
 const int START_SIZE = 2;
+// probabilities of each function when lane has at least 1 car
 const int F_CAR_JOIN = 39, F_CAR_LEAVE = 46, F_CAR_CHANGE = 15;
+// probability of new car joining when lane has no cars
 const int E_CAR_JOIN = 50;
 
 int main() {
@@ -38,7 +40,6 @@ int main() {
                     if (carList[g].size() > 0) {
                         cout << " Car Paid: ";
                         carList[g][0].print();
-                        cout << " ";
                         carList[g].pop_front();
                     }
                 }
