@@ -50,7 +50,7 @@ int main() {
                     carList[g].push_back(*temp);
                 }
                 else {
-                    temp = &carList[g].back();
+                    *temp = carList[g].back();
                     int small_index = 0;
                     int small_val = carList[0].size();
                     for(int f = 0; f < carList.size(); f++) {
