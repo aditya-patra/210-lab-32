@@ -28,10 +28,11 @@ int main() {
             carList[e][i].print();
         }
     }
+    cout << endl;
     // iterate through each time value (1 to 20)
     for (int t = 1; t <= 20; t++) {
         // print time/iteration
-        cout << endl << "Time: " << t << endl;
+        cout << "Time: " << t << endl;
         // iterate through each lane
         for(int g = 0; g < carList.size(); g++) {
             cout << "Lane: " << g+1;
@@ -103,6 +104,5 @@ int main() {
             }
         }
         cout << endl;
-        t++;
     }
 }
