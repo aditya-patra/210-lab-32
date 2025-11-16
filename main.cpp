@@ -32,7 +32,8 @@ int main() {
             // check if car pays
             cout << "Lane: " << g+1;
             int output1 = 0;
-            if ((int)(rand() % 100) >= 50) {
+            int rnd = (int)(rand() % 100);
+            if (rnd >= 50) {
                 if (carList[g].size() > 0) {
                     cout << " Car Paid: ";
                     carList[g][0].print();
@@ -46,7 +47,6 @@ int main() {
                 temp = new Car();
                 cout << " Joined Lane: ";
                 temp->print();
-                cout << " ";
                 carList[g].push_back(*temp);
             }
         }
