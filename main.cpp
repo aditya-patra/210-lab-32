@@ -44,6 +44,7 @@ int main() {
                 cout << " ";
                 carList[g].push_back(*temp);
             }
+            break;
         }
         // print header for current queue
         cout << endl << "Queue: " << endl;
@@ -59,5 +60,4 @@ int main() {
         break;
     }
     cout << "Empty";
-    break;
 }
