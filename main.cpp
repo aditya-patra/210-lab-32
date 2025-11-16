@@ -63,7 +63,7 @@ int main() {
                     if (small_index == 3) {
                         small_index = 0;
                     }
-                    small_index += 1
+                    small_index += 1;
                 }
                 carList[g].pop_back();
                 carList[small_index].push_back(*temp);
@@ -73,12 +73,15 @@ int main() {
         }
         // print current queue
         for(int e = 0; e < carList.size(); e++) {
-            cout << "Lane " << e << " Queue: " << endl;
-            for (int i = 0; i < carList[e].size(); i++) {
-                carList[e][i].print();
-            }
+            cout << "Lane " << e << " Queue: ";
             if (carList[e].size() == 0) {
                 cout << "Empty" << endl;
+            }
+            else {
+                cout << endl;
+            }
+            for (int i = 0; i < carList[e].size(); i++) {
+                carList[e][i].print();
             }
         }
         cout << endl;
