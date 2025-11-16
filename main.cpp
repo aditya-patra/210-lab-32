@@ -15,19 +15,18 @@ int main() {
             temp = new Car();
             carList[i].push_back(*temp);
         }
-        carList[i][0].print();
     }
     // simulation
     cout << "Initial Queue: " << endl;
     for(int e = 0; e < carList.size(); e++) {
-        cout << "Lane " << e << ":" << endl;
+        cout << "Lane " << e+1 << ":" << endl;
         for (int i = 0; i < carList[e].size(); i++) {
             carList[e][i].print();
         }
     }
     for (int t = 1; t <= 20; t++) {
         // print time/iteration
-        cout << "Time: " << t << endl;
+        cout << endl << "Time: " << t << endl;
         for(int g = 0; g < carList.size(); g++) {
             // check if car pays
             cout << "Lane: " << g+1;
@@ -52,7 +51,6 @@ int main() {
                 carList[g].push_back(*temp);
             }
             else {
-                cout << " b";
                 temp = &carList[g].back();
                 int small_index = 0;
                 int small_val = carList[0].size();
@@ -61,19 +59,21 @@ int main() {
                         small_index = f;
                     }
                 }
-                cout << " b";
+                if (small_index == g) {
+                    if (small_index == 3) {
+                        small_index = 0;
+                    }
+                    small_index += 1
+                }
                 carList[g].pop_back();
                 carList[small_index].push_back(*temp);
-                cout << " Switched Lane: ";
+                cout << " Switched: ";
                 temp->print();
-                cout << " Lane " << g << " to " << small_index << " ";
             }
         }
-        // print header for current queue
-        cout << endl << "Queue: " << endl;
         // print current queue
         for(int e = 0; e < carList.size(); e++) {
-            cout << "Lane " << e << ": ";
+            cout << "Lane " << e << " Queue: " << endl;
             for (int i = 0; i < carList[e].size(); i++) {
                 carList[e][i].print();
             }
