@@ -61,6 +61,9 @@ int main() {
                 }
                 carList[g].pop_back();
                 carList[small_index].push_back(*temp);
+                cout << " Switched Lane: ";
+                temp->print();
+                cout << " Lane " << g << " to " << small_index << " ";
             }
         }
         // print header for current queue
