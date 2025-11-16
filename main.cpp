@@ -73,7 +73,7 @@ int main() {
         }
         // print current queue
         for(int e = 0; e < carList.size(); e++) {
-            cout << "Lane " << e << " Queue: ";
+            cout << "Lane " << e+1 << " Queue: ";
             if (carList[e].size() == 0) {
                 cout << "Empty" << endl;
             }
